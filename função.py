@@ -1,16 +1,20 @@
-### Hi there 👋
+import os 
+import random
 
-<!--
-**DanielBilibio/DanielBilibio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+def limparTela():
+    os.system("cls")
 
-Here are some ideas to get you started:
+def inicializa_letras_acertadas(palavra):
+    return ["_" for letra in palavra]
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+def limparLetras(item):
+    return item.upper().replace(" ","")
+
+def verificaLetra(palavra):
+    while not palavra.isalpha():
+        print("\nErro, informe apenas letras!\n")
+        palavra = str(input("Informe a palavra Chave: "))
+    return palavra.upper()
+
+def errou_letra(erros):
+    print("Você errou a letra!")
